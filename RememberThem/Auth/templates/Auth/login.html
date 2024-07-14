@@ -1,0 +1,29 @@
+{% extends 'Auth/layout.html'%}
+{% block head %}
+{% endblock %}
+{% block content %}
+<header>RememberThem</header>
+<div class="container">
+    <h2>התחברות</h2>
+
+    <form action="#">
+        <label for="email">מייל</label>
+        <input id="email" name="email" type="email">
+        <label for="pass">סיסמא</label>
+        <input id="pass" name="pass" type="password">
+        <button class="button-positive" type="submit">התחבר</button>
+        <section>
+            <button class="button-regular" type="submit" onclick="RedirectRegister()">להרשמה</button>
+            <a href="">שכחת סיסמא?</a>
+        </section>
+    </form>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+    function RedirectRegister(){
+        document.querySelector('form').action = "/auth/register/";
+        console.log("changing " + formaction);
+    }
+</script>
+{% endblock %}
