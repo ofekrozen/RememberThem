@@ -3,9 +3,23 @@
 <header>RememberThem</header>
 <div class="container">
     <h2>הרשמה</h2>
-    <form>
+    <form id="registration" action="#" method="post">
+        {% csrf_token %}
         <label for="email">דואר אלקטרוני:</label>
         <input type="email" id="email" name="email" placeholder="rememberthem@gmail.com" required>
+
+        <label for="phone">מספר טלפון:</label>
+        <section style="display:flex;">
+            <input type="text" id="phone" name="phone" placeholder="1234567" required>
+            <select id="cell" name="cell" form="registration" required>
+                <option value="050">050</option>
+                <option value="052">052</option>
+                <option value="053">053</option>
+                <option value="054">054</option>
+                <option value="055">055</option>
+                <option value="058">058</option>
+            </select>
+        </section>
 
         <label for="password">סיסמא:</label>
         <input type="password" id="password" name="password" placeholder="RememberThem123!" required>
@@ -20,7 +34,7 @@
         <input type="text" id="lname" name="lname" placeholder="אותם" required>
 
         <button type="submit" class="button-positive">הירשם</button>
-        <a href="/auth/">התחברות</a>
+        <a href="/auth/">להתחברות</a>
     </form>
 </div>
 {% endblock %}

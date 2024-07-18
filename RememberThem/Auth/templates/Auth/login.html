@@ -6,7 +6,8 @@
 <div class="container">
     <h2>התחברות</h2>
 
-    <form action="#">
+    <form action="#" method="post">
+        {% csrf_token %}
         <label for="email">מייל</label>
         <input id="email" name="email" type="email">
         <label for="pass">סיסמא</label>

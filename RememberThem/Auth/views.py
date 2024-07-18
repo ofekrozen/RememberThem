@@ -5,5 +5,5 @@ from django.shortcuts import render
 def LogIn(request):
     return render(request, 'Auth/login.html')
 
-def Register(request):
+def Registration(request):
     return render(request,"Auth/register.html")
